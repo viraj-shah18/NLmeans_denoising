@@ -1,8 +1,8 @@
 import numpy as np
-import math
 from numba import jit
 from utils import create_gaussian, add_noise
 from scipy.ndimage import gaussian_filter
+from tqdm import trange
 
 
 @jit()
@@ -28,7 +28,7 @@ def nl_means(gt_image, patch_size, search_size, h, sigma, a, noise_mode="gaussia
     pred=np.zeros(gt_image.shape)
     
     # first 2 for loops to get the central pixel of the patch under consideration
-    for i in range(to_pad, padded_noisy_image.shape[0]-to_pad):
+    for i in trange(to_pad, padded_noisy_image.shape[0]-to_pad, desc="Running NLmeans"):
         for j in range(to_pad, padded_noisy_image.shape[1]-to_pad):
             curr_patch = padded_noisy_image[i-to_pad:i+to_pad+1, j-to_pad:j+to_pad+1]
 

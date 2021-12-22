@@ -12,7 +12,6 @@ This is a python implementation of [A non-local algorithm for image denoising](h
 ### Qualitative
 
 ![GaussEg1](results/GaussExample.png)
-![SPEg1](results/SPExample.png)
 
 ### Quantitative
 Peak Signal to Noise Ratio results for 10 different images and comparision between gaussian denoising method and NL means image denoising method is as shown below

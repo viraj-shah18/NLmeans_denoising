@@ -1,3 +1,4 @@
+noise_type: 'gaussian'  # this currently supports 'gaussian' and 's&p' noise modes
 patch_size: 7
 search_size: 21
 h: 0.1
